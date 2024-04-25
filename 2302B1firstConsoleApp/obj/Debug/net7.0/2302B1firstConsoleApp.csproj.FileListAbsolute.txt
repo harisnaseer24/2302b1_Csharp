@@ -1,0 +1,14 @@
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\bin\Debug\net7.0\2302B1firstConsoleApp.exe
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\bin\Debug\net7.0\2302B1firstConsoleApp.deps.json
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\bin\Debug\net7.0\2302B1firstConsoleApp.runtimeconfig.json
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\bin\Debug\net7.0\2302B1firstConsoleApp.dll
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\bin\Debug\net7.0\2302B1firstConsoleApp.pdb
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\2302B1firstConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\2302B1firstConsoleApp.AssemblyInfoInputs.cache
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\2302B1firstConsoleApp.AssemblyInfo.cs
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\2302B1firstConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\2302B1firstConsoleApp.dll
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\refint\2302B1firstConsoleApp.dll
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\2302B1firstConsoleApp.pdb
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\2302B1firstConsoleApp.genruntimeconfig.cache
+C:\Users\harisnaseer\source\repos\2302B1firstConsoleApp\2302B1firstConsoleApp\obj\Debug\net7.0\ref\2302B1firstConsoleApp.dll
