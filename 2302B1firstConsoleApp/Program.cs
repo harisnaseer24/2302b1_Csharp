@@ -138,13 +138,14 @@ else
 {
     Console.WriteLine("You can't vote.");
 }
-*/
+
 
 
 //2. Switch
-
 Console.WriteLine("Enter day number from 1 to 7 :");
 int day = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter time:");
+int time = Convert.ToInt32(Console.ReadLine());
 
 switch (day)
 {
@@ -174,3 +175,134 @@ switch (day)
         Console.WriteLine("Please give number from 1 to 7.");
         break;
 }
+
+switch (time)
+{
+    case 10:
+        Console.WriteLine("Its 10:00 am...");
+        break;
+    case 11:
+        Console.WriteLine("Its 11:00 am...");
+        break;
+    case 12:
+        Console.WriteLine("Its 12:00 am..");
+        break;
+    case 1:
+        Console.WriteLine("Its 1:00 pm..");
+        break;
+    case 2:
+        Console.WriteLine("Its 2:00 pm.");
+        break;
+    case 3:
+        Console.WriteLine("Its 3:00 pm..");
+        break;
+    case 4:
+        Console.WriteLine("Its 4:00 pm..");
+        break;
+
+    default:
+        Console.WriteLine("Please enter values between 1-12");
+        break;
+}
+
+
+//Loops
+//for when we are aware about starting and ending point.
+
+
+for(int i=1; i <=100; i++) 
+{
+    Console.WriteLine(i);
+}
+
+
+//reverse order
+for (int i = 100; i >= 1; i--)
+{
+	Console.WriteLine(i);
+}
+
+//even
+       //init   //test  //inc/dc
+for (int i = 1; i <= 10; i++)
+{
+    if( i % 2 == 0)
+    {
+		Console.WriteLine(i);
+	}
+	
+}
+
+//odd
+for (int i = 1; i <= 10; i++)
+{
+	if (i % 2 != 0)
+	{
+		Console.WriteLine(i);
+	}
+
+}
+
+
+
+
+//while when we dont know about the exact number of iterations.
+int j = 1;// initialization
+
+while (j < 1 )//test condition
+{     
+    Console.WriteLine(j);
+	// increment/dec
+	j++;
+}
+
+
+
+
+
+
+//do while
+
+int j = 1;// initialization
+
+//test condition
+do
+{
+    Console.WriteLine(j);
+    // increment/dec
+    j++;
+}
+while (j < 1);*/
+
+//even odd program
+char user;
+int num;
+do
+{
+    Console.WriteLine("Enter a number to check even / odd");
+
+    num = Convert.ToInt32(Console.ReadLine());
+    if(num %2 == 0)
+    {
+		Console.WriteLine("Even Number");
+	}
+    else if(num % 2 != 0)
+    {
+		Console.WriteLine("Odd Number");
+	}
+    else
+    {
+		Console.WriteLine("Invalid Number");
+	}
+	Console.WriteLine("Do you want to check again ? Press Y for yes and N for no");
+	user = Convert.ToChar(Console.ReadLine());
+
+} while (user== 'Y' || user == 'y');
+
+
+
+
+
+
+//foreach
+//num * i
