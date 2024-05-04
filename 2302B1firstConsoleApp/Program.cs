@@ -272,7 +272,7 @@ do
     // increment/dec
     j++;
 }
-while (j < 1);*/
+while (j < 1);
 
 //even odd program
 char user;
@@ -304,5 +304,68 @@ do
 
 
 
-//foreach
-//num * i
+//Arrays
+int[] marks = { 47,78,52,45,98 };   //5 length 0-4 indexes
+
+int[] numbers = new int[5];// declare and define
+
+numbers[0] = 2;
+numbers[4] = 25;
+//Console.WriteLine(numbers[4]);  //C# sets default value to 0
+
+foreach (int mark in marks)
+{
+    Console.WriteLine(mark);
+}
+    //          i < 5
+for (int i = 0; i < marks.Length; i++ )
+{
+    Console.WriteLine(marks[i]);
+}
+
+
+int[] marks = { 47, 78, 52, 78, 98 };
+
+
+Array.Sort(marks);//ascending order
+//Array.Reverse(marks);// reverses an array
+
+//Console.WriteLine(Array.IndexOf(marks, 78));
+//Console.WriteLine(Array.LastIndexOf(marks, 78));
+Console.WriteLine(Array.BinarySearch(marks, 92));
+
+//foreach (int mark in marks)
+//{
+//    Console.WriteLine(mark);
+//}
+*/
+//Multidimensional Arrays (Array inside an array) 2D,3D etc..;
+
+string[,] batchRecord =
+{
+
+    {"mohsin","ahsan"},
+    {"Adeel","Murtaza" },
+    {"Adnan","Abdullah" },
+    { "Waleed", "Bilal"}
+};
+
+//Console.WriteLine(batchRecord);
+
+for (int i = 0; i < batchRecord.GetLength(0); i++)
+{
+
+    // Console.WriteLine("batch no : "+(i+1)+ ""); Concatenation
+    //Console.WriteLine($"batch no : {i}");
+    Console.WriteLine($"batch no : {i+1} ");
+    for (int j = 0;  j < batchRecord.GetLength(1); j++)
+    {
+      
+        Console.WriteLine(batchRecord[i,j]);
+    }
+    Console.WriteLine();
+    //Console.Write("\n\n\n\n");
+
+};
+
+
