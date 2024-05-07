@@ -338,7 +338,7 @@ Console.WriteLine(Array.BinarySearch(marks, 92));
 //{
 //    Console.WriteLine(mark);
 //}
-*/
+
 //Multidimensional Arrays (Array inside an array) 2D,3D etc..;
 
 string[,] batchRecord =
@@ -369,3 +369,82 @@ for (int i = 0; i < batchRecord.GetLength(0); i++)
 };
 
 
+//Jagged Array (sizes of sub arrays are not fixed)2D:
+
+string[][] skillSet =
+{
+    new string[4]{"Php","Laravel","Html","C#"},
+    new string[3]{"Css","Jquery","Java"},
+    new string[2]{"MySql","SQL Server"},
+    new string[1]{"Batain banana"},
+};
+
+
+//float[] number = { 0.1f, 25.4f, 0.253f };
+
+//Console.WriteLine(skillSet[2][1]);
+
+//var decides the datatype on runtime
+
+foreach (var skills in skillSet)
+{
+    foreach (var skill in skills)
+    {
+        
+    Console.Write( skill+ " || " );
+
+    }
+    Console.WriteLine();
+}
+
+
+//Functions
+
+//1.  User Defined 
+//2.  Pre Defined
+
+//1. User Defined
+
+//1. No Return with no Parameters
+
+void Greet()
+{
+
+    Console.WriteLine( "Hi Haris, Welcome to our Console Application. ");
+}
+
+//Greet();
+
+//2. No Return with Parameters
+
+void GreetWithName(string name)//Parameters
+{
+    Console.WriteLine($"Hi {name}, Welcome to our Console Application. ");
+}
+
+//GreetWithName("Mr. Abc");//Arguements
+//GreetWithName("Mr. Haris Naseer");//Arguements
+
+//3. Return with no Parameters
+
+
+string GreetWithReturn()
+{
+   return ($"Hi User, Welcome to our Console Application. ");
+}
+
+//Console.WriteLine(GreetWithReturn());
+
+string msg = GreetWithReturn();
+Console.WriteLine(  msg );
+
+*/
+//4. Return with  Parameters
+//
+//string Info(string name, byte age)//Parameters
+//{
+//  return($"Name is : {name}. \nAge is : {age} ");
+//}
+
+//string detail=Info("Zeeshan", 45);
+//Console.WriteLine( detail);
