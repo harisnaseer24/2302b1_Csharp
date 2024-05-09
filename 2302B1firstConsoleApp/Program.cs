@@ -400,8 +400,8 @@ foreach (var skills in skillSet)
 
 //Functions
 
-//1.  User Defined 
-//2.  Pre Defined
+//1.  User Defined // add(), login() etc.. 
+//2.  Pre Defined // Math.Sqrt()//Console.WriteLine()
 
 //1. User Defined
 
@@ -448,3 +448,61 @@ Console.WriteLine(  msg );
 
 //string detail=Info("Zeeshan", 45);
 //Console.WriteLine( detail);
+
+//Exception Handling (try catch)
+
+try
+{
+    Console.WriteLine("Enter a number from 1 to 7");
+    int day = Convert.ToInt32(Console.ReadLine());
+    switch (day)
+    {
+        case 1:
+            Console.WriteLine("Monday");
+            break;
+        case 2:
+            Console.WriteLine("Tues");
+            break;
+        case 3:
+            Console.WriteLine("Wed");
+            break;
+        case 4:
+            Console.WriteLine("Thurs");
+            break;
+        case 5:
+            Console.WriteLine("fri");
+            break;
+        case 6:
+            Console.WriteLine("sat");
+            break;
+        case 7:
+            Console.WriteLine("sun");
+            break;
+        default:
+            Console.WriteLine("invalid");
+            break;
+
+    }
+
+
+
+}
+catch (Exception e)
+{
+    Console.WriteLine("Something went wrong. Please try again..!"+ e);
+}
+finally
+{
+    Console.WriteLine("Thanks for using our application.");
+}
+
+
+
+
+
+
+//Collections and types
+//Generic collections
+//Non Generic collections
+
+//List (Generics)
