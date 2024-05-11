@@ -451,50 +451,50 @@ Console.WriteLine(  msg );
 
 //Exception Handling (try catch)
 
-try
-{
-    Console.WriteLine("Enter a number from 1 to 7");
-    int day = Convert.ToInt32(Console.ReadLine());
-    switch (day)
-    {
-        case 1:
-            Console.WriteLine("Monday");
-            break;
-        case 2:
-            Console.WriteLine("Tues");
-            break;
-        case 3:
-            Console.WriteLine("Wed");
-            break;
-        case 4:
-            Console.WriteLine("Thurs");
-            break;
-        case 5:
-            Console.WriteLine("fri");
-            break;
-        case 6:
-            Console.WriteLine("sat");
-            break;
-        case 7:
-            Console.WriteLine("sun");
-            break;
-        default:
-            Console.WriteLine("invalid");
-            break;
+//try
+//{
+//    Console.WriteLine("Enter a number from 1 to 7");
+//    int day = Convert.ToInt32(Console.ReadLine());
+//    switch (day)
+//    {
+//        case 1:
+//            Console.WriteLine("Monday");
+//            break;
+//        case 2:
+//            Console.WriteLine("Tues");
+//            break;
+//        case 3:
+//            Console.WriteLine("Wed");
+//            break;
+//        case 4:
+//            Console.WriteLine("Thurs");
+//            break;
+//        case 5:
+//            Console.WriteLine("fri");
+//            break;
+//        case 6:
+//            Console.WriteLine("sat");
+//            break;
+//        case 7:
+//            Console.WriteLine("sun");
+//            break;
+//        default:
+//            Console.WriteLine("invalid");
+//            break;
 
-    }
+//    }
 
 
 
-}
-catch (Exception e)
-{
-    Console.WriteLine("Something went wrong. Please try again..!"+ e);
-}
-finally
-{
-    Console.WriteLine("Thanks for using our application.");
-}
+//}
+//catch (Exception e)
+//{
+//    Console.WriteLine("Something went wrong. Please try again..!"+ e);
+//}
+//finally
+//{
+//    Console.WriteLine("Thanks for using our application.");
+//}
 
 
 
@@ -503,6 +503,111 @@ finally
 
 //Collections and types
 //Generic collections
-//Non Generic collections
+//datatype fixed
+//size dynamic
+// list, hashtables, dictionaries, stack, queues
 
-//List (Generics)
+
+//Non Generic collections
+//array, ArrayList
+//fixed size
+
+
+//(Generics)
+//List 
+
+using System.Collections;
+//List<string> SuperCars = new List<string>();
+//SuperCars.Add("Ferrari");
+//SuperCars.Add("Buggati Chiron");
+//SuperCars.Add("Toyota Supra");
+//SuperCars.Add("Lamborghini");
+
+
+List<string> Cars = new List<string>();
+string name;
+//Cars.Add("Honda Civic");
+ name = Console.ReadLine();
+if(name != "ok")
+{
+
+Cars.Add(name);
+}
+//Cars.Add("Honda BRV");
+//Cars.Add("Honda Accord");
+//Cars.Add("Honda HRV");
+//Cars.Add("Honda Insight");
+
+////Cars.Remove("Honda HRV");
+////Cars.RemoveAt(2);
+////Console.WriteLine(Cars.Contains("Ford Raptor"));
+////Console.WriteLine(Cars.Contains("Toyota Grande"));
+
+//Cars.Insert(1,"Ford Raptor");
+
+//Cars.AddRange(SuperCars);
+//Cars.RemoveRange(2, 3);
+
+
+////Console.WriteLine(Cars[5]);
+
+//foreach (string car in Cars)
+//{
+//    Console.WriteLine(car);
+//}
+//Cars.Clear();
+
+//Queues (FIFO: First in first out)
+
+
+//Queue<string> Mobiles = new Queue<string>();
+//Mobiles.Enqueue("Google Pixel 7");
+//Mobiles.Enqueue("Samsung S24");
+//Mobiles.Enqueue("Apple 15 pro max");
+//Mobiles.Enqueue("Motorolla one 5g");
+//Mobiles.Enqueue("Oneplus 10r");
+
+//Mobiles.Dequeue();
+//Mobiles.Dequeue();
+//Mobiles.Dequeue();
+
+
+//Mobiles.Clear();
+//Console.WriteLine(Mobiles[0]); Cannot apply indexing on queues
+
+
+//foreach (var item in Mobiles)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+
+//Stacks (LIFO: Last in first out)
+
+Stack<string> Skills = new Stack<string>();
+Skills.Push("Html");
+Skills.Push("CSS");
+Skills.Push("Javascript");
+Skills.Push("Java");
+Skills.Push("C#");
+Skills.Push("C++");
+Skills.Push("C");
+Skills.Push("PHP");
+
+Skills.Pop();
+Skills.Pop();
+Skills.Pop();
+
+
+//Skills.Clear();
+//Console.WriteLine(Mobiles[0]); Cannot apply indexing on queues
+
+
+foreach (var item in Skills)
+{
+    Console.WriteLine(item);
+}
+
+//create a List. Take user input and add items in list.
+// when user types "ok" , you have to print all the given items
