@@ -516,7 +516,7 @@ Console.WriteLine(  msg );
 //(Generics)
 //List 
 
-using System.Collections;
+//using System.Collections;
 //List<string> SuperCars = new List<string>();
 //SuperCars.Add("Ferrari");
 //SuperCars.Add("Buggati Chiron");
@@ -524,15 +524,15 @@ using System.Collections;
 //SuperCars.Add("Lamborghini");
 
 
-List<string> Cars = new List<string>();
-string name;
-//Cars.Add("Honda Civic");
- name = Console.ReadLine();
-if(name != "ok")
-{
+//List<string> Cars = new List<string>();
+//string name;
+////Cars.Add("Honda Civic");
+// name = Console.ReadLine();
+//if(name != "ok")
+//{
 
-Cars.Add(name);
-}
+//Cars.Add(name);
+//}
 //Cars.Add("Honda BRV");
 //Cars.Add("Honda Accord");
 //Cars.Add("Honda HRV");
@@ -585,29 +585,109 @@ Cars.Add(name);
 
 //Stacks (LIFO: Last in first out)
 
-Stack<string> Skills = new Stack<string>();
-Skills.Push("Html");
-Skills.Push("CSS");
-Skills.Push("Javascript");
-Skills.Push("Java");
-Skills.Push("C#");
-Skills.Push("C++");
-Skills.Push("C");
-Skills.Push("PHP");
+//Stack<string> Skills = new Stack<string>();
+//Skills.Push("Html");
+//Skills.Push("CSS");
+//Skills.Push("Javascript");
+//Skills.Push("Java");
+//Skills.Push("C#");
+//Skills.Push("C++");
+//Skills.Push("C");
+//Skills.Push("PHP");
 
-Skills.Pop();
-Skills.Pop();
-Skills.Pop();
+//Skills.Pop();
+//Skills.Pop();
+//Skills.Pop();
 
 
 //Skills.Clear();
 //Console.WriteLine(Mobiles[0]); Cannot apply indexing on queues
 
 
-foreach (var item in Skills)
-{
-    Console.WriteLine(item);
-}
+//foreach (var item in Skills)
+//{
+//    Console.WriteLine(item);
+//}
 
 //create a List. Take user input and add items in list.
 // when user types "ok" , you have to print all the given items
+
+using System.Collections;
+//Dictionary(Generic collections)
+Dictionary<string, string> Mobiles = new Dictionary<string, string>();
+Mobiles.Add("Techno", "Spark 20 pro +");
+Mobiles.Add("Samsung", "Galaxy S24 Ultra");
+Mobiles.Add("Redmi", "Note 13");
+Mobiles.Add("Apple", "15 pro");
+
+Console.WriteLine(Mobiles["Techno"]);
+
+
+Mobiles.Remove("Redmi");
+foreach (var item in Mobiles)
+{
+
+    string[] test = (item.ToString()).Split(",");
+    string key = test[0].Trim('[');// [
+    string value = test[1].Trim(']');// ]
+
+
+    //Console.WriteLine(key);
+    //Console.WriteLine(value);
+    Console.WriteLine($"We have mobile of brand: {key} model : {value}");
+    //Console.WriteLine(test[1]);
+
+}
+
+//Hashtables (Non Generic collections)(no fixed datatype)
+Hashtable students = new Hashtable();
+students.Add(45, "Haris");
+students.Add("002", "Owais");
+students.Add(0.2, "Ebad");
+students.Add(true, "Afzal");
+
+students.Remove(true);
+Console.WriteLine(students.GetHashCode());
+
+Console.WriteLine(students["002"]);
+
+foreach (DictionaryEntry item in students)
+{
+    Console.WriteLine(item.Key + " : " + item.Value);
+}
+
+//ArrayList (Non Generic collections)
+
+ArrayList SuperCars = new ArrayList();
+SuperCars.Add("Ferrari");
+SuperCars.Add(021454);
+SuperCars.Add("Toyota Supra");
+SuperCars.Add("Lamborghini");
+
+ArrayList Cars = new ArrayList();
+string name;
+//Cars.Add("Honda Civic");
+
+Cars.Add("Honda BRV");
+Cars.Add(false);
+Cars.Add("Honda HRV");
+Cars.Add("Honda Insight");
+
+Cars.Remove("Honda HRV");
+Cars.RemoveAt(2);
+Console.WriteLine(Cars.Contains("Ford Raptor"));
+Console.WriteLine(Cars.Contains("Toyota Grande"));
+
+Cars.Insert(1, "Ford Raptor");
+
+Cars.AddRange(SuperCars);
+Cars.RemoveRange(2, 3);
+
+
+//Console.WriteLine(Cars[5]);
+
+foreach (string car in Cars)
+{
+    Console.WriteLine(car);
+}
+//Cars.Clear();
