@@ -612,82 +612,171 @@ Console.WriteLine(  msg );
 //create a List. Take user input and add items in list.
 // when user types "ok" , you have to print all the given items
 
-using System.Collections;
-//Dictionary(Generic collections)
-Dictionary<string, string> Mobiles = new Dictionary<string, string>();
-Mobiles.Add("Techno", "Spark 20 pro +");
-Mobiles.Add("Samsung", "Galaxy S24 Ultra");
-Mobiles.Add("Redmi", "Note 13");
-Mobiles.Add("Apple", "15 pro");
+//using System.Collections;
+////Dictionary(Generic collections)
+//Dictionary<string, string> Mobiles = new Dictionary<string, string>();
+//Mobiles.Add("Techno", "Spark 20 pro +");
+//Mobiles.Add("Samsung", "Galaxy S24 Ultra");
+//Mobiles.Add("Redmi", "Note 13");
+//Mobiles.Add("Apple", "15 pro");
 
-Console.WriteLine(Mobiles["Techno"]);
-
-
-Mobiles.Remove("Redmi");
-foreach (var item in Mobiles)
-{
-
-    string[] test = (item.ToString()).Split(",");
-    string key = test[0].Trim('[');// [
-    string value = test[1].Trim(']');// ]
+//Console.WriteLine(Mobiles["Techno"]);
 
 
-    //Console.WriteLine(key);
-    //Console.WriteLine(value);
-    Console.WriteLine($"We have mobile of brand: {key} model : {value}");
-    //Console.WriteLine(test[1]);
+//Mobiles.Remove("Redmi");
+//foreach (var item in Mobiles)
+//{
 
-}
+//    string[] test = (item.ToString()).Split(",");
+//    string key = test[0].Trim('[');// [
+//    string value = test[1].Trim(']');// ]
+
+
+//Console.WriteLine(key);
+//Console.WriteLine(value);
+//Console.WriteLine($"We have mobile of brand: {key} model : {value}");
+//Console.WriteLine(test[1]);
+
+//}
 
 //Hashtables (Non Generic collections)(no fixed datatype)
-Hashtable students = new Hashtable();
-students.Add(45, "Haris");
-students.Add("002", "Owais");
-students.Add(0.2, "Ebad");
-students.Add(true, "Afzal");
+//Hashtable students = new Hashtable();
+//students.Add(45, "Haris");
+//students.Add("002", "Owais");
+//students.Add(0.2, "Ebad");
+//students.Add(true, "Afzal");
 
-students.Remove(true);
-Console.WriteLine(students.GetHashCode());
+//students.Remove(true);
+//Console.WriteLine(students.GetHashCode());
 
-Console.WriteLine(students["002"]);
+//Console.WriteLine(students["002"]);
 
-foreach (DictionaryEntry item in students)
-{
-    Console.WriteLine(item.Key + " : " + item.Value);
-}
+//foreach (DictionaryEntry item in students)
+//{
+//    Console.WriteLine(item.Key + " : " + item.Value);
+//}
 
 //ArrayList (Non Generic collections)
 
-ArrayList SuperCars = new ArrayList();
-SuperCars.Add("Ferrari");
-SuperCars.Add(021454);
-SuperCars.Add("Toyota Supra");
-SuperCars.Add("Lamborghini");
+//ArrayList SuperCars = new ArrayList();
+//SuperCars.Add("Ferrari");
+//SuperCars.Add(021454);
+//SuperCars.Add("Toyota Supra");
+//SuperCars.Add("Lamborghini");
 
-ArrayList Cars = new ArrayList();
-string name;
-//Cars.Add("Honda Civic");
+//ArrayList Cars = new ArrayList();
+//string name;
+////Cars.Add("Honda Civic");
 
-Cars.Add("Honda BRV");
-Cars.Add(false);
-Cars.Add("Honda HRV");
-Cars.Add("Honda Insight");
+//Cars.Add("Honda BRV");
+//Cars.Add(false);
+//Cars.Add("Honda HRV");
+//Cars.Add("Honda Insight");
 
-Cars.Remove("Honda HRV");
-Cars.RemoveAt(2);
-Console.WriteLine(Cars.Contains("Ford Raptor"));
-Console.WriteLine(Cars.Contains("Toyota Grande"));
+//Cars.Remove("Honda HRV");
+//Cars.RemoveAt(2);
+//Console.WriteLine(Cars.Contains("Ford Raptor"));
+//Console.WriteLine(Cars.Contains("Toyota Grande"));
 
-Cars.Insert(1, "Ford Raptor");
+//Cars.Insert(1, "Ford Raptor");
 
-Cars.AddRange(SuperCars);
-Cars.RemoveRange(2, 3);
+//Cars.AddRange(SuperCars);
+//Cars.RemoveRange(2, 3);
 
 
-//Console.WriteLine(Cars[5]);
+////Console.WriteLine(Cars[5]);
 
-foreach (string car in Cars)
-{
-    Console.WriteLine(car);
-}
+//foreach (string car in Cars)
+//{
+//    Console.WriteLine(car);
+//}
 //Cars.Clear();
+// String Methods
+
+string test = "We ,are ,le,ar,ning, C#";
+//Console.WriteLine(test.ToUpper());
+//Console.WriteLine(test.ToLower());
+//Console.WriteLine(test.Replace("learning", "mastering"));
+
+//string abc = test.Trim('b');
+//Console.WriteLine(abc);
+
+//string[] xyz =test.Split(",");
+
+//Console.WriteLine(xyz[1]);
+
+//foreach (var item in xyz)
+//{ 
+//    Console.WriteLine(item);
+//}
+
+
+
+
+// Coding Best Practices:
+
+//Indentation (Readable by using new lines and spaces)
+//less Repeatation ( functions , class and objects)
+//Comments
+//Meaningful Variable Names
+//No errors
+
+//Objects and Classes
+
+
+Mobiles mobile = new Mobiles();//default constructor
+mobile.calling();
+Console.WriteLine(mobile.brand);
+
+mobile.brand = "Samsung";
+mobile.model = "S24";
+mobile.price = 450000;
+mobile.isApproved = true;
+
+mobile.calling();
+Console.WriteLine(mobile.brand);
+
+Mobiles iphone = new Mobiles("Apple", "15 promax",250000,false);
+iphone.calling();
+
+Mobiles redmi = new Mobiles("Redmi");
+iphone.calling();
+
+
+
+public class Mobiles
+{
+    public string? brand;
+    public string? model;
+    public int? price;
+    public bool isApproved;
+
+    //constructor
+    public Mobiles() {
+        this.brand = "unknown";
+        this.model = "unknown";
+        this.price = 0;
+        this.isApproved = true;
+    
+    }  public Mobiles(string brand) {
+        this.brand = brand;
+        this.model = "unknown";
+        this.price = 0;
+        this.isApproved = true;
+    
+    }
+
+    //parameterized constructor (overloading) 
+    public Mobiles(string brand, string model, int price , bool isApprove ) {
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+        this.isApproved = isApprove;
+    
+    }
+    public void calling()
+    {
+        //Console.WriteLine(this.model + " is calling" );
+        Console.WriteLine($"{this.model} is calling" );
+    }
+}
