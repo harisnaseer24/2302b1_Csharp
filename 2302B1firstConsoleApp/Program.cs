@@ -724,59 +724,187 @@ string test = "We ,are ,le,ar,ning, C#";
 //Objects and Classes
 
 
-Mobiles mobile = new Mobiles();//default constructor
-mobile.calling();
-Console.WriteLine(mobile.brand);
+//Mobiles mobile = new Mobiles();//default constructor
+//mobile.calling();
+//Console.WriteLine(mobile.brand);
 
-mobile.brand = "Samsung";
-mobile.model = "S24";
-mobile.price = 450000;
-mobile.isApproved = true;
+//mobile.brand = "Samsung";
+//mobile.model = "S24";
+//mobile.price = 450000;
+//mobile.isApproved = true;
 
-mobile.calling();
-Console.WriteLine(mobile.brand);
+//mobile.calling();
+//Console.WriteLine(mobile.brand);
 
-Mobiles iphone = new Mobiles("Apple", "15 promax",250000,false);
-iphone.calling();
+//Mobiles iphone = new Mobiles("Apple", "15 promax",250000,false);
+//iphone.calling();
 
-Mobiles redmi = new Mobiles("Redmi");
-iphone.calling();
+//Mobiles redmi = new Mobiles("Redmi");
+//iphone.calling();
 
 
+//public class Mobiles
+//{
+//    public string? brand;
+//    public string? model;
+//    public int? price;
+//    public bool isApproved;
 
-public class Mobiles
+//    //constructor
+//    public Mobiles() {
+//        this.brand = "unknown";
+//        this.model = "unknown";
+//        this.price = 0;
+//        this.isApproved = true;
+
+//    }  public Mobiles(string brand) {
+//        this.brand = brand;
+//        this.model = "unknown";
+//        this.price = 0;
+//        this.isApproved = true;
+
+//    }
+
+//parameterized constructor (overloading) 
+//    public Mobiles(string brand, string model, int price , bool isApprove ) {
+//        this.brand = brand;
+//        this.model = model;
+//        this.price = price;
+//        this.isApproved = isApprove;
+
+//    }
+//    public void calling()
+//    {
+//        //Console.WriteLine(this.model + " is calling" );
+//        Console.WriteLine($"{this.model} is calling" );
+//    }
+//}
+
+//OOP (Object Oriented Programming)
+//Readable
+//Reusable
+//optimized
+//organized
+
+//Main Pillars of OOP
+
+//1. Inheritance
+
+//Watch Casio = new Watch("Casio 457T", "titanium black", 15000);
+//Casio.ShowTime();
+
+//Watch.count++;
+
+//SmartWatch AppleWatch = new SmartWatch("Series 9", "black", 150000, true, "Super Amoled", "500 Mah");
+//AppleWatch.ShowTime();
+//Watch.count++;
+
+//WristBand samsungBand = new WristBand("samsung band 4","black",45000, true, "S Amoled","415 MAH",false);
+//samsungBand.sportsMode();
+//Watch.count++;
+
+//Console.WriteLine(Watch.count);
+
+//Math a = new Math();
+//a.Sqrt(49);
+//Math.Sqrt(49);
+//Math.Tan(49);
+//String.Concat();
+
+
+Watch.ShowTime();
+
+
+////Parent Class / Super Class / Base Class (Grand Parent)
+public class Watch
 {
-    public string? brand;
-    public string? model;
-    public int? price;
-    public bool isApproved;
-
-    //constructor
-    public Mobiles() {
-        this.brand = "unknown";
-        this.model = "unknown";
-        this.price = 0;
-        this.isApproved = true;
-    
-    }  public Mobiles(string brand) {
-        this.brand = brand;
-        this.model = "unknown";
-        this.price = 0;
-        this.isApproved = true;
-    
-    }
-
-    //parameterized constructor (overloading) 
-    public Mobiles(string brand, string model, int price , bool isApprove ) {
-        this.brand = brand;
-        this.model = model;
-        this.price = price;
-        this.isApproved = isApprove;
-    
-    }
-    public void calling()
+    public static int count=0;
+    public string model;
+    public string color;
+    public int price;
+    public Watch(string model, string color, int price)
     {
-        //Console.WriteLine(this.model + " is calling" );
-        Console.WriteLine($"{this.model} is calling" );
+        this.model = model;
+        this.color = color;
+        this.price = price;
+    }
+    public static void ShowTime()
+    {
+        Console.WriteLine($"Watch shows time in 24 hours format {DateTime.Now}.");
+
     }
 }
+
+////Child Class / Derived Class /sub Class /Inherited class
+public class SmartWatch : Watch  //(Parent)
+{
+    public bool canCall;
+    public string displayType;
+    public string battery;
+
+    public SmartWatch(string model, string color, int price, bool canCall, string display, string batt) : base(model, color, price)
+    {
+        this.canCall = canCall;
+        this.displayType = display;
+        this.battery = batt;
+    }
+
+    //method overriding
+    public void ShowTime()
+    {
+        Console.WriteLine($"{this.model} shows time in all format.Current date and time is:  {DateTime.Now}. It has {this.displayType} and {this.battery}.");
+    }
+
+    //method overloading
+    public void ShowTime(string region)
+    {
+        Console.WriteLine($"in {region} : {this.model} shows time in all format.Current date and time is:  {DateTime.Now}. It has {this.displayType} and {this.battery}.");
+
+    }
+
+}
+
+
+// Child class (Grand Child)
+public class WristBand : SmartWatch
+{
+    public bool isWaterProof;
+    public WristBand(string model, string color, int price, bool canCall, string display, string batt, bool isWP) : base(model, color,price, canCall, display,batt)
+    {
+        this.isWaterProof = isWP;
+    }
+
+    public void sportsMode()
+    {
+        if (this.isWaterProof)
+        {
+            Console.WriteLine($"{this.model} has 99+ Sports Mode and it is Waterproof");
+        }
+        else
+        {
+            Console.WriteLine($"{this.model} has 99+ Sports Mode and it is not waterproof");
+        }
+        
+    }
+}
+
+
+
+//2. Polymorphism - Many forms
+//methods overloading
+//methods overriding
+
+//3. Abstraction - to show only the necessary process to the user and hide irrelevant processes.
+//example :  admin panel, facebook user
+
+//4. Encapsulation - to bundle the properties and methods together in a class
+
+// types of inheritance
+//1 ) single inheritance        watch -> Smartwatch
+//2 ) multiple                  watch ->smartwatch , itfeatures -> smartwatch
+//3 ) multi level               watch -> Smartwatch -> wrist Band
+//4 ) heirarchical                 watch -> Smartwatch,  watch -> digitalwatch
+//5 ) hybrid
+
+// static and abstract
+
