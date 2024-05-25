@@ -812,81 +812,81 @@ string test = "We ,are ,le,ar,ning, C#";
 //String.Concat();
 
 
-Watch.ShowTime();
+//Watch.ShowTime();
 
 
-////Parent Class / Super Class / Base Class (Grand Parent)
-public class Watch
-{
-    public static int count=0;
-    public string model;
-    public string color;
-    public int price;
-    public Watch(string model, string color, int price)
-    {
-        this.model = model;
-        this.color = color;
-        this.price = price;
-    }
-    public static void ShowTime()
-    {
-        Console.WriteLine($"Watch shows time in 24 hours format {DateTime.Now}.");
+//////Parent Class / Super Class / Base Class (Grand Parent)
+//public class Watch
+//{
+//    public static int count=0;
+//    public string model;
+//    public string color;
+//    public int price;
+//    public Watch(string model, string color, int price)
+//    {
+//        this.model = model;
+//        this.color = color;
+//        this.price = price;
+//    }
+//    public static void ShowTime()
+//    {
+//        Console.WriteLine($"Watch shows time in 24 hours format {DateTime.Now}.");
 
-    }
-}
+//    }
+//}
 
 ////Child Class / Derived Class /sub Class /Inherited class
-public class SmartWatch : Watch  //(Parent)
-{
-    public bool canCall;
-    public string displayType;
-    public string battery;
+//public class SmartWatch : Watch  //(Parent)
+//{
+//    public bool canCall;
+//    public string displayType;
+//    public string battery;
 
-    public SmartWatch(string model, string color, int price, bool canCall, string display, string batt) : base(model, color, price)
-    {
-        this.canCall = canCall;
-        this.displayType = display;
-        this.battery = batt;
-    }
+//    public SmartWatch(string model, string color, int price, bool canCall, string display, string batt) : base(model, color, price)
+//    {
+//        this.canCall = canCall;
+//        this.displayType = display;
+//        this.battery = batt;
+//    }
 
-    //method overriding
-    public void ShowTime()
-    {
-        Console.WriteLine($"{this.model} shows time in all format.Current date and time is:  {DateTime.Now}. It has {this.displayType} and {this.battery}.");
-    }
+//    //method overriding
+//    public void ShowTime()
+//    {
+//        Console.WriteLine($"{this.model} shows time in all format.Current date and time is:  {DateTime.Now}. It has {this.displayType} and {this.battery}.");
+//    }
 
-    //method overloading
-    public void ShowTime(string region)
-    {
-        Console.WriteLine($"in {region} : {this.model} shows time in all format.Current date and time is:  {DateTime.Now}. It has {this.displayType} and {this.battery}.");
+//    //method overloading
+//    public void ShowTime(string region)
+//    {
+//        Console.WriteLine($"in {region} : {this.model} shows time in all format.Current date and time is:  {DateTime.Now}. It has {this.displayType} and {this.battery}.");
 
-    }
+//    }
 
-}
+//}
 
 
 // Child class (Grand Child)
-public class WristBand : SmartWatch
-{
-    public bool isWaterProof;
-    public WristBand(string model, string color, int price, bool canCall, string display, string batt, bool isWP) : base(model, color,price, canCall, display,batt)
-    {
-        this.isWaterProof = isWP;
-    }
+//public class WristBand : SmartWatch
+//{
+//    public bool isWaterProof;
+//    public WristBand(string model, string color, int price, bool canCall, string display, string batt, bool isWP) : base(model, color,price, canCall, display,batt)
+//    {
+//        this.isWaterProof = isWP;
+//    }
 
-    public void sportsMode()
-    {
-        if (this.isWaterProof)
-        {
-            Console.WriteLine($"{this.model} has 99+ Sports Mode and it is Waterproof");
-        }
-        else
-        {
-            Console.WriteLine($"{this.model} has 99+ Sports Mode and it is not waterproof");
-        }
-        
-    }
-}
+//    public void sportsMode()
+//    {
+//        if (this.isWaterProof)
+//        {
+//            Console.WriteLine($"{this.model} has 99+ Sports Mode and it is Waterproof");
+//        }
+//        else
+//        {
+//            Console.WriteLine($"{this.model} has 99+ Sports Mode and it is not waterproof");
+//        }
+
+//    }
+//}
 
 
 
@@ -904,7 +904,88 @@ public class WristBand : SmartWatch
 //2 ) multiple                  watch ->smartwatch , itfeatures -> smartwatch
 //3 ) multi level               watch -> Smartwatch -> wrist Band
 //4 ) heirarchical                 watch -> Smartwatch,  watch -> digitalwatch
-//5 ) hybrid
+//5 ) hybrid                    any two or types existing at one place
 
 // static and abstract
 
+
+//Vehicle xyz = new Vehicle();
+//xyz.speed = 100;
+//xyz.regNo = "AAZ-384";
+//xyz.Run();
+
+Car markX = new Car(220, "AD-4586", 5, "Toyota Mark X 2008");
+markX.Run();
+markX.stop("Drift");// 2nd function with string parameter
+markX.stop();// 1st function with no parameters
+
+Car corolla = new Car(180, "HD-7778", 5, "Toyota Corolla");
+Car fdf = new Car(180, "HD-7778", 5, "Toyota Corolla");
+Car df = new Car(180, "HD-7778", 5, "Toyota Corolla");
+Car gdf = new Car(180, "HD-7778", 5, "Toyota Corolla");
+Car d = new Car(180, "HD-7778", 5, "Toyota Corolla");
+Car s = new Car(180, "HD-7778", 5, "Toyota Corolla");
+Car ds = new Car(180, "HD-7778", 5, "Toyota Corolla");
+
+//Math abc = new Math();
+//abc.Sqrt(49);
+
+//Static functions
+//Math.Sqrt(49);
+//Math.Sin(49);
+//Math.Log(49);
+
+//Console.WriteLine(Car.carCount);
+
+Car.beginRace();
+
+abstract public class Vehicle
+{
+    public int speed;
+    public string regNo;
+
+    public virtual void Run()
+    {
+        Console.WriteLine($"The Vehicle started running at {this.speed} Km/h");
+    }
+
+}
+
+public class Car : Vehicle
+{
+    public static int carCount = 0;
+    public int wheels;
+    public string model;
+
+    public Car(int speed, string no, int wheels, string model)
+    {
+        this.speed = speed;
+        this.regNo = no;
+        this.wheels = wheels;
+        this.model = model;
+        carCount++;
+
+    }
+
+    public static void beginRace(){
+        Console.WriteLine("Boom! the race has been started. May the best win..!");
+    }
+    //Override
+    public override void Run()
+    {
+        Console.WriteLine($"The {this.model} having reg number {this.regNo} started running at {this.speed} KM/HR");
+    }
+
+    // self method
+    public void stop()
+    {
+        Console.WriteLine($"The {this.model} has stopped.");
+    }
+    
+
+    public void stop(string stunt)
+    {
+        Console.WriteLine($"The {this.model} has stopped with {stunt}.");
+    }
+
+}
