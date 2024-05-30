@@ -914,18 +914,18 @@ string test = "We ,are ,le,ar,ning, C#";
 //xyz.regNo = "AAZ-384";
 //xyz.Run();
 
-Car markX = new Car(220, "AD-4586", 5, "Toyota Mark X 2008");
-markX.Run();
-markX.stop("Drift");// 2nd function with string parameter
-markX.stop();// 1st function with no parameters
+//Car markX = new Car(220, "AD-4586", 5, "Toyota Mark X 2008");
+//markX.Run();
+//markX.stop("Drift");// 2nd function with string parameter
+//markX.stop();// 1st function with no parameters
 
-Car corolla = new Car(180, "HD-7778", 5, "Toyota Corolla");
-Car fdf = new Car(180, "HD-7778", 5, "Toyota Corolla");
-Car df = new Car(180, "HD-7778", 5, "Toyota Corolla");
-Car gdf = new Car(180, "HD-7778", 5, "Toyota Corolla");
-Car d = new Car(180, "HD-7778", 5, "Toyota Corolla");
-Car s = new Car(180, "HD-7778", 5, "Toyota Corolla");
-Car ds = new Car(180, "HD-7778", 5, "Toyota Corolla");
+//Car corolla = new Car(180, "HD-7778", 5, "Toyota Corolla");
+//Car fdf = new Car(180, "HD-7778", 5, "Toyota Corolla");
+//Car df = new Car(180, "HD-7778", 5, "Toyota Corolla");
+//Car gdf = new Car(180, "HD-7778", 5, "Toyota Corolla");
+//Car d = new Car(180, "HD-7778", 5, "Toyota Corolla");
+//Car s = new Car(180, "HD-7778", 5, "Toyota Corolla");
+//Car ds = new Car(180, "HD-7778", 5, "Toyota Corolla");
 
 //Math abc = new Math();
 //abc.Sqrt(49);
@@ -937,55 +937,120 @@ Car ds = new Car(180, "HD-7778", 5, "Toyota Corolla");
 
 //Console.WriteLine(Car.carCount);
 
-Car.beginRace();
+//Car.beginRace();
 
-abstract public class Vehicle
+//abstract public class Vehicle
+//{
+//    public int speed;
+//    public string regNo;
+
+//    public virtual void Run()
+//    {
+//        Console.WriteLine($"The Vehicle started running at {this.speed} Km/h");
+//    }
+
+//}
+
+//public class Car : Vehicle
+//{
+//    public static int carCount = 0;
+//    public int wheels;
+//    public string model;
+
+//    public Car(int speed, string no, int wheels, string model)
+//    {
+//        this.speed = speed;
+//        this.regNo = no;
+//        this.wheels = wheels;
+//        this.model = model;
+//        carCount++;
+
+//    }
+
+//    public static void beginRace(){
+//        Console.WriteLine("Boom! the race has been started. May the best win..!");
+//    }
+//    //Override
+//    public override void Run()
+//    {
+//        Console.WriteLine($"The {this.model} having reg number {this.regNo} started running at {this.speed} KM/HR");
+//    }
+
+//    // self method
+//    public void stop()
+//    {
+//        Console.WriteLine($"The {this.model} has stopped.");
+//    }
+
+//    public void stop(string stunt)
+//    {
+//        Console.WriteLine($"The {this.model} has stopped with {stunt}.");
+//    }
+
+//}
+
+
+//Interfaces
+
+FrontEndDeveloper muslim = new FrontEndDeveloper();
+muslim.AnimatedDesign("Muslim");
+
+FullStackDeveloper Haris = new FullStackDeveloper();
+Haris.SimpleCRUD();
+
+interface FrontEndDev
 {
-    public int speed;
-    public string regNo;
-
-    public virtual void Run()
-    {
-        Console.WriteLine($"The Vehicle started running at {this.speed} Km/h");
-    }
+  public  void SimpleDesign();
+  public void AnimatedDesign(string name);
 
 }
 
-public class Car : Vehicle
+interface BackEndDev
 {
-    public static int carCount = 0;
-    public int wheels;
-    public string model;
+  public  void SimpleCRUD();
+    public void Authentication();
+    public void ComplexAPIs();
+}
 
-    public Car(int speed, string no, int wheels, string model)
+public class FrontEndDeveloper: FrontEndDev
+{
+    public void SimpleDesign()
     {
-        this.speed = speed;
-        this.regNo = no;
-        this.wheels = wheels;
-        this.model = model;
-        carCount++;
-
+        Console.WriteLine("We will provide you basic responsive design with html,CSS and Js.");
     }
-
-    public static void beginRace(){
-        Console.WriteLine("Boom! the race has been started. May the best win..!");
-    }
-    //Override
-    public override void Run()
+    public void AnimatedDesign(string name)
     {
-        Console.WriteLine($"The {this.model} having reg number {this.regNo} started running at {this.speed} KM/HR");
-    }
-
-    // self method
-    public void stop()
-    {
-        Console.WriteLine($"The {this.model} has stopped.");
-    }
-    
-
-    public void stop(string stunt)
-    {
-        Console.WriteLine($"The {this.model} has stopped with {stunt}.");
+        Console.WriteLine($"Hi this is {name}, We will provide you an animated responsive design with react,Jquery, Next.js");
     }
 
 }
+//Multiple Inheritance
+
+public class FullStackDeveloper: FrontEndDev, BackEndDev
+{
+    public void SimpleDesign()
+    {
+        Console.WriteLine("We will provide you basic responsive design with html,CSS and Js.");
+    }
+    public void AnimatedDesign(string name)
+    {
+        Console.WriteLine($"Hi this is {name}, We will provide you an animated responsive design with react,Jquery, Next.js");
+    }
+    public void SimpleCRUD()
+    {
+        Console.WriteLine("We will provide you basic CRUD  with any stack you want.");
+    }
+    public void Authentication()
+    {
+        Console.WriteLine("We will provide you authentication and authorization");
+    }
+    public void ComplexAPIs()
+    {
+        Console.WriteLine("We will provide you Complex APIs.");
+    }
+ 
+
+}
+
+//Access Modifiers
+
