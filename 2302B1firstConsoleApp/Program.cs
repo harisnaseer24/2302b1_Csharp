@@ -992,65 +992,127 @@ string test = "We ,are ,le,ar,ning, C#";
 
 //Interfaces
 
-FrontEndDeveloper muslim = new FrontEndDeveloper();
-muslim.AnimatedDesign("Muslim");
+//FrontEndDeveloper muslim = new FrontEndDeveloper();
+//muslim.AnimatedDesign("Muslim");
 
-FullStackDeveloper Haris = new FullStackDeveloper();
-Haris.SimpleCRUD();
+//FullStackDeveloper Haris = new FullStackDeveloper();
+//Haris.SimpleCRUD();
 
-interface FrontEndDev
-{
-  public  void SimpleDesign();
-  public void AnimatedDesign(string name);
+//interface FrontEndDev
+//{
+//  public  void SimpleDesign();
+//  public void AnimatedDesign(string name);
 
-}
+//}
 
-interface BackEndDev
-{
-  public  void SimpleCRUD();
-    public void Authentication();
-    public void ComplexAPIs();
-}
+//interface BackEndDev
+//{
+//  public  void SimpleCRUD();
+//    public void Authentication();
+//    public void ComplexAPIs();
+//}
 
-public class FrontEndDeveloper: FrontEndDev
-{
-    public void SimpleDesign()
-    {
-        Console.WriteLine("We will provide you basic responsive design with html,CSS and Js.");
-    }
-    public void AnimatedDesign(string name)
-    {
-        Console.WriteLine($"Hi this is {name}, We will provide you an animated responsive design with react,Jquery, Next.js");
-    }
+//public class FrontEndDeveloper: FrontEndDev
+//{
+//    public void SimpleDesign()
+//    {
+//        Console.WriteLine("We will provide you basic responsive design with html,CSS and Js.");
+//    }
+//    public void AnimatedDesign(string name)
+//    {
+//        Console.WriteLine($"Hi this is {name}, We will provide you an animated responsive design with react,Jquery, Next.js");
+//    }
 
-}
-//Multiple Inheritance
+//}
+////Multiple Inheritance
 
-public class FullStackDeveloper: FrontEndDev, BackEndDev
-{
-    public void SimpleDesign()
-    {
-        Console.WriteLine("We will provide you basic responsive design with html,CSS and Js.");
-    }
-    public void AnimatedDesign(string name)
-    {
-        Console.WriteLine($"Hi this is {name}, We will provide you an animated responsive design with react,Jquery, Next.js");
-    }
-    public void SimpleCRUD()
-    {
-        Console.WriteLine("We will provide you basic CRUD  with any stack you want.");
-    }
-    public void Authentication()
-    {
-        Console.WriteLine("We will provide you authentication and authorization");
-    }
-    public void ComplexAPIs()
-    {
-        Console.WriteLine("We will provide you Complex APIs.");
-    }
- 
+//public class FullStackDeveloper: FrontEndDev, BackEndDev
+//{
+//    public void SimpleDesign()
+//    {
+//        Console.WriteLine("We will provide you basic responsive design with html,CSS and Js.");
+//    }
+//    public void AnimatedDesign(string name)
+//    {
+//        Console.WriteLine($"Hi this is {name}, We will provide you an animated responsive design with react,Jquery, Next.js");
+//    }
+//    public void SimpleCRUD()
+//    {
+//        Console.WriteLine("We will provide you basic CRUD  with any stack you want.");
+//    }
+//    public void Authentication()
+//    {
+//        Console.WriteLine("We will provide you authentication and authorization");
+//    }
+//    public void ComplexAPIs()
+//    {
+//        Console.WriteLine("We will provide you Complex APIs.");
+//    }
 
-}
+
+//}
 
 //Access Modifiers
 
+//1. public  || can be access anywhere in the program by any one.
+//2. private || can be access owner class only . 
+//3. protected ||  can be access owner and child class only .
+
+
+Products neckBand = new Products(4565, "Lenovo neckband", 1500);
+neckBand.Name = "Lenove Neckband 2";
+
+Console.WriteLine(neckBand.Name);
+//Console.WriteLine(neckBand.ProId);
+
+neckBand.SetPrice(800);
+neckBand.ShowPrice();
+Household Bowls = new Household(45, "Bowl Set", 999, "Household");
+
+Bowls.ShowProduct();
+
+
+public class Products
+{
+    private int ProId;
+    public string? Name;
+    protected int Price;
+    public Products(int id, string name, int price)
+    {
+        this.ProId = id;
+        this.Name = name;
+        this.Price = price;
+
+    }
+    public void SetPrice(int price)
+    {
+        this.Price = price;
+    }
+    public void ShowPrice()
+    {
+        Console.WriteLine(this.Price); 
+    }
+    public void ShowId()
+    {
+        Console.WriteLine(this.ProId); 
+    }
+
+}
+
+
+public class Household : Products
+{
+    public string category;
+    public Household(int id, string name, int price, string cat): base(id, name, price)
+    {
+        this.category = cat;
+    }
+
+    public void ShowProduct()
+    {
+        Console.WriteLine(this.Name);
+        Console.WriteLine(this.Price);
+        Console.WriteLine(this.category);
+        this.ShowId();
+    }
+}
