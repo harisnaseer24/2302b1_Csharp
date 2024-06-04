@@ -1059,60 +1059,142 @@ string test = "We ,are ,le,ar,ning, C#";
 //3. protected ||  can be access owner and child class only .
 
 
-Products neckBand = new Products(4565, "Lenovo neckband", 1500);
-neckBand.Name = "Lenove Neckband 2";
+//Products neckBand = new Products(4565, "Lenovo neckband", 1500);
+//neckBand.Name = "Lenove Neckband 2";
 
-Console.WriteLine(neckBand.Name);
-//Console.WriteLine(neckBand.ProId);
+//Console.WriteLine(neckBand.Name);
+////Console.WriteLine(neckBand.ProId);
 
-neckBand.SetPrice(800);
-neckBand.ShowPrice();
-Household Bowls = new Household(45, "Bowl Set", 999, "Household");
+//neckBand.SetPrice(800);
+//neckBand.ShowPrice();
+//Household Bowls = new Household(45, "Bowl Set", 999, "Household");
 
-Bowls.ShowProduct();
-
-
-public class Products
-{
-    private int ProId;
-    public string? Name;
-    protected int Price;
-    public Products(int id, string name, int price)
-    {
-        this.ProId = id;
-        this.Name = name;
-        this.Price = price;
-
-    }
-    public void SetPrice(int price)
-    {
-        this.Price = price;
-    }
-    public void ShowPrice()
-    {
-        Console.WriteLine(this.Price); 
-    }
-    public void ShowId()
-    {
-        Console.WriteLine(this.ProId); 
-    }
-
-}
+//Bowls.ShowProduct();
 
 
-public class Household : Products
-{
-    public string category;
-    public Household(int id, string name, int price, string cat): base(id, name, price)
-    {
-        this.category = cat;
-    }
+//public class Products
+//{
+//    private int ProId;
+//    public string? Name;
+//    protected int Price;
+//    public Products(int id, string name, int price)
+//    {
+//        this.ProId = id;
+//        this.Name = name;
+//        this.Price = price;
 
-    public void ShowProduct()
-    {
-        Console.WriteLine(this.Name);
-        Console.WriteLine(this.Price);
-        Console.WriteLine(this.category);
-        this.ShowId();
-    }
-}
+//    }
+//    public void SetPrice(int price)
+//    {
+//        this.Price = price;
+//    }
+//    public void ShowPrice()
+//    {
+//        Console.WriteLine(this.Price); 
+//    }
+//    public void ShowId()
+//    {
+//        Console.WriteLine(this.ProId); 
+//    }
+
+//}
+
+
+//public class Household : Products
+//{
+//    public string category;
+//    public Household(int id, string name, int price, string cat): base(id, name, price)
+//    {
+//        this.category = cat;
+//    }
+
+//    public void ShowProduct()
+//    {
+//        Console.WriteLine(this.Name);
+//        Console.WriteLine(this.Price);
+//        Console.WriteLine(this.category);
+//        this.ShowId();
+//    }
+//}
+
+
+// DELEGATEs
+//Normal Delegate
+
+//MyMaths.Calculate eval=new MyMaths.Calculate(MyMaths.Mul);
+
+//eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);eval(45, 10);
+
+
+//Multicast Delegate
+
+//MyMaths.Calculate Evaluate;
+//Evaluate = MyMaths.Add;
+
+//Evaluate(4, 4);
+
+
+//Evaluate = MyMaths.Sub;
+
+//Evaluate(4, 4);
+
+//Evaluate = MyMaths.Mul;
+
+//Evaluate(4, 4);
+
+////Evaluate = MyMaths.Div;
+
+////Evaluate(4, 4);
+
+//MyMaths.Div(4, 4);
+
+//public class MyMaths
+//{
+//    public delegate void Calculate(double num1, double num2); //
+
+//    public static void Add(double num1, double num2)
+//    {
+//        Console.WriteLine(num1+num2);
+//    }
+
+//    public static void Sub(double num1, double num2)
+//    {
+//        Console.WriteLine(num1-num2);
+//    } 
+
+//    public static void Mul(double num1, double num2)
+//    {
+//        Console.WriteLine(num1*num2);
+//    }
+
+//    public static double Div(double num1, double num2)
+//    {
+//        return(num1/num2);
+//    }
+
+//}
+
+
+//Shopping.GetItem shop;
+//shop = Shopping.GetEatables;
+//shop("Choco powder", 250, "good and rich texture");
+
+//public class Shopping
+//{
+//    public delegate void GetItem(string item, int price, string description);
+
+//    public static void GetEatables(string item, int price, string description)
+//    {
+//        Console.WriteLine("we have bought {0} in Rs. {1}. It has {2}", item, price, description);
+//    }
+
+
+//}
+
+//Unary operator  a++;
+
+//Binary operator  a + b;
+
+//Ternary operator (condition) ? "hi": "bye";
+
+var greet = (10 < 9)  ? "hi" : "bye"; Console.WriteLine(greet);
