@@ -1191,10 +1191,85 @@ string test = "We ,are ,le,ar,ning, C#";
 
 //}
 
-//Unary operator  a++;
+//Unary operators  a++;
 
-//Binary operator  a + b;
+//Binary operators  a + b;
 
-//Ternary operator (condition) ? "hi": "bye";
+//Ternary operators (condition) ? "hi": "bye";
 
-var greet = (10 < 9)  ? "hi" : "bye"; Console.WriteLine(greet);
+//var greet = (10 < 9)  ? "hi" : "bye"; Console.WriteLine(greet);
+
+//getter setter
+
+//Animal goat = new Animal();
+//goat.name = "Goat";
+//goat.Age = 56;
+
+//Console.WriteLine(goat.Age);
+
+
+//public class Animal
+//{
+//    public string name;
+//    public string animalClass;
+//    private int age;
+
+
+//    public int Age
+//    {
+//        get { return age; } 
+
+//        set {
+//            if(value <= 40) {
+//                age = value;
+//            }
+//            else
+//            {
+//                age = 40;
+//            }
+
+//        }
+//    }
+
+//}
+
+//Animal cat = new Animal();
+//cat.name = "Tom";
+//cat.animalClass = "Mammal";
+
+//Console.WriteLine(cat.animalClass);
+
+//Console.WriteLine();
+
+////auto Complete property
+//public class Animal
+//{
+//    public string? name;
+//    public string? animalClass { get; set; }
+
+//}
+//enum
+//Implicit 
+//Explicit 
+
+Console.WriteLine(PakXI.Fakhar + "has jersey no : " + (int)PakXI.Babar);
+//switch (input)
+//{
+//    case (int)PakXI.Monday:
+//        cw
+
+//}
+
+enum PakXI
+{
+    Babar = 56,
+    Rizwan = 35,
+    Saim = 45,
+    Fakhar = 55,
+    haris = 150,
+    shaheen = 11,
+    iftikhar = 78,
+};
+
+
+//Console.WriteLine(PakXI.Fakhar);
