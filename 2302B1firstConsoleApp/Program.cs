@@ -693,7 +693,7 @@ Console.WriteLine(  msg );
 //Cars.Clear();
 // String Methods
 
-string test = "We ,are ,le,ar,ning, C#";
+//string test = "We ,are ,le,ar,ning, C#";
 //Console.WriteLine(test.ToUpper());
 //Console.WriteLine(test.ToLower());
 //Console.WriteLine(test.Replace("learning", "mastering"));
@@ -1252,7 +1252,7 @@ string test = "We ,are ,le,ar,ning, C#";
 //Implicit 
 //Explicit 
 
-Console.WriteLine(PakXI.Fakhar + "has jersey no : " + (int)PakXI.Babar);
+//Console.WriteLine(PakXI.Fakhar + "has jersey no : " + (int)PakXI.Babar);
 //switch (input)
 //{
 //    case (int)PakXI.Monday:
@@ -1260,16 +1260,85 @@ Console.WriteLine(PakXI.Fakhar + "has jersey no : " + (int)PakXI.Babar);
 
 //}
 
-enum PakXI
-{
-    Babar = 56,
-    Rizwan = 35,
-    Saim = 45,
-    Fakhar = 55,
-    haris = 150,
-    shaheen = 11,
-    iftikhar = 78,
-};
+//enum PakXI
+//{
+//    Babar = 56,
+//    Rizwan = 35,
+//    Saim = 45,
+//    Fakhar = 55,
+//    haris = 150,
+//    shaheen = 11,
+//    iftikhar = 78,
+//};
 
 
 //Console.WriteLine(PakXI.Fakhar);
+
+
+//Indexers, Records and namespaces
+
+//Records
+
+//User huzaifa= new User();
+//huzaifa.age = 18;
+//huzaifa.name = "Huzaifa";
+//huzaifa.ID = 1;
+//Console.WriteLine(huzaifa);
+//User1 haris = new User1();
+//haris.age = 18;
+//haris.name = "Haris";
+//haris.ID = 2;
+//Console.WriteLine(haris);
+//Console.WriteLine(haris.age);
+
+//public class User
+//{
+//    public int ID { get; set; }
+//    public string? name { get; set; }
+//    public int age { get; set; }
+
+//}
+
+//public record User1
+//{
+//    public int ID { get; set; }
+//    public string? name { get; set; }
+//    public int age { get; set; }
+
+//}
+
+// Indexers : when we want our object to behave like an array we use indexers.
+
+
+//Fruits basket= new Fruits();
+//basket[0] = "Pineapple";
+//basket[1] = "Apple";
+//basket[2] = "Apricot";
+//basket[3] = "Grapes";
+//basket[4] = "Mango";
+
+
+//Console.WriteLine(basket[4]);
+//public class Fruits
+//{
+//    public string[] fruitNames = new string[5];
+
+//    public string this[int i]
+//    {
+//        get { return fruitNames[i]; }
+//        set
+//        {
+//            fruitNames[i] = value;
+//        }
+
+//    }
+//}
+
+//namespaces : collection of related classes
+//using System.Collections;
+using TaxSystem;
+
+Tax cartax = new Tax();
+cartax.amount = 4555;
+
+Vehicle vehicle = new Vehicle();
